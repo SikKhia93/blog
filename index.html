@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>SikKhia&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Cloud, Linux, Programming, Life">
+<meta property="og:type" content="website">
+<meta property="og:title" content="SikKhia&#39;s Blog">
+<meta property="og:url" content="https://sikkhia93.github.io/blog/index.html">
+<meta property="og:site_name" content="SikKhia&#39;s Blog">
+<meta property="og:description" content="Cloud, Linux, Programming, Life">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:author" content="Jacky Cheng">
+<meta property="article:tag" content="Blog, Notes">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="SikKhia's Blog" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/blog/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">SikKhia&#39;s Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/blog/" id="subtitle">Just hanging.</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜尋"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜尋"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://SikKhia93.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-Git-submodule" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/Git-submodule/" class="article-date">
+  <time class="dt-published" datetime="2021-03-07T12:42:38.000Z" itemprop="datePublished">2021-03-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/blog/Git-submodule/">Git submodule</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>需求：</p>
+<ul>
+<li>Submodule path: <code>&lt;folder path&gt;</code></li>
+<li>SubRepo url: <code>&lt;repo url&gt;</code></li>
+</ul>
+<h2 id="Add-Submodule"><a href="#Add-Submodule" class="headerlink" title="Add Submodule"></a>Add Submodule</h2><ol>
+<li><p>add submodule</p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git submodule add &lt;repo url&gt; &lt;folder path&gt;</span><br></pre></td></tr></table></figure>
+
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git submodule add https://github.com/theme-next/theme-next-pjax themes/next/<span class="built_in">source</span>/lib/pjax</span></span><br><span class="line">The following path is ignored by one of your .gitignore files:</span><br><span class="line">themes/next/source/lib/pjax</span><br><span class="line">Use -f if you really want to add it.</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> git submodule add -f https://github.com/theme-next/theme-next-pjax themes/next/<span class="built_in">source</span>/lib/pjax</span></span><br><span class="line">Cloning into &#x27;/Users/sikkhia/Code/blog/themes/next/source/lib/pjax&#x27;...</span><br><span class="line">remote: Enumerating objects: 1381, done.</span><br><span class="line">remote: Total 1381 (delta 0), reused 0 (delta 0), pack-reused 1381</span><br><span class="line">Receiving objects: 100% (1381/1381), 634.80 KiB | 786.00 KiB/s, done.</span><br><span class="line">Resolving deltas: 100% (789/789), done.</span><br></pre></td></tr></table></figure></li>
+<li><p>確認 working tree 狀態</p>
+<ul>
+<li>.gitmodules: 記錄 module 資料夾路徑及 repo url</li>
+<li>themes/next/source/lib/pjax: module 資料夾路徑</li>
+</ul>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git status</span></span><br><span class="line">On branch master</span><br><span class="line">Changes to be committed:</span><br><span class="line">(use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)</span><br><span class="line"></span><br><span class="line">        new file:   .gitmodules</span><br><span class="line">        new file:   themes/next/source/lib/pjax</span><br></pre></td></tr></table></figure></li>
+<li><p>記錄 repository 的變更</p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git commit -m <span class="string">&quot;add next pjax.&quot;</span></span></span><br><span class="line">[master e12d8c4] add next pjax.</span><br><span class="line">2 files changed, 4 insertions(+)</span><br><span class="line">create mode 100644 .gitmodules</span><br><span class="line">create mode 160000 themes/next/source/lib/pjax</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="Pull-Submodule"><a href="#Pull-Submodule" class="headerlink" title="Pull Submodule"></a>Pull Submodule</h2><p>如果 SubRepo 更新，可以在 <code>git status</code> 看到提示，但在 SuperRepo 執行 <em>Pull</em> 並不會更新。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git status</span></span><br><span class="line">On branch master</span><br><span class="line">Your branch is up to date with &#x27;origin/master&#x27;.</span><br><span class="line"></span><br><span class="line">Changes not staged for commit:</span><br><span class="line">(use &quot;git add &lt;file&gt;...&quot; to update what will be committed)</span><br><span class="line">(use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)</span><br><span class="line"></span><br><span class="line">    modified:   themes/next/source/lib/pjax (new commits)</span><br></pre></td></tr></table></figure>
+
+<p>SubRepo 更新：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git submodule update --recursive --remote</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>–recursive: 如果 submodule 中有其它的 submodule，將會一併進行更新。</li>
+<li>–remote: 基於遠端資訊更新，而非本機上的HASH資訊。</li>
+</ul>
+<h2 id="Push-Submodule"><a href="#Push-Submodule" class="headerlink" title="Push Submodule"></a>Push Submodule</h2><p>使用方式同 SuperRepo。</p>
+<h2 id="Delete-Submodule"><a href="#Delete-Submodule" class="headerlink" title="Delete Submodule"></a>Delete Submodule</h2><ol>
+<li><p>將 submodule 取消註冊</p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git submodule deinit -f &lt;folder path&gt;</span><br></pre></td></tr></table></figure></li>
+<li><p>刪除 submodule 在 .git 的資訊</p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -rf .git/modules/&lt;folder path&gt;</span><br></pre></td></tr></table></figure></li>
+<li><p>移除 submodule 資料夾</p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rm -f &lt;folder path&gt;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="Clone-SuperRepo"><a href="#Clone-SuperRepo" class="headerlink" title="Clone SuperRepo"></a>Clone SuperRepo</h2><pre><code><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone &lt;repo url&gt; --recurse-submodules</span><br></pre></td></tr></table></figure>
+</code></pre>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://sikkhia93.github.io/blog/Git-submodule/" data-id="cklzaf41z0008q9yvcmnw7vdv" data-title="Git submodule" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/git/" rel="tag">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/git-submodule/" rel="tag">git submodule</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Git-subtree" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/Git-subtree/" class="article-date">
+  <time class="dt-published" datetime="2021-03-07T12:41:43.000Z" itemprop="datePublished">2021-03-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/blog/Git-subtree/">Git subtree</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>需求：</p>
+<ul>
+<li>Subtree path: <code>&lt;folder path&gt;</code></li>
+<li>SubRepo url: <code>&lt;repo url&gt;</code></li>
+<li>SubRepo version: <code>&lt;ref&gt;</code></li>
+</ul>
+<h2 id="Add-Subtree"><a href="#Add-Subtree" class="headerlink" title="Add Subtree"></a>Add Subtree</h2><pre><code><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git subtree add --prefix &lt;folder path&gt; &lt;repo url&gt; &lt;ref&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git subtree add --prefix themes/next https://github.com/theme-next/hexo-theme-next.git d24c48efb1ff1182b23926a3835e350f9c3ab6eb</span></span><br><span class="line">git fetch https://github.com/theme-next/hexo-theme-next.git d24c48efb1ff1182b23926a3835e350f9c3ab6eb</span><br><span class="line">warning: no common commits</span><br><span class="line">remote: Enumerating objects: 12474, done.</span><br><span class="line">remote: Total 12474 (delta 0), reused 0 (delta 0), pack-reused 12474</span><br><span class="line">Receiving objects: 100% (12474/12474), 7.03 MiB | 1.43 MiB/s, done.</span><br><span class="line">Resolving deltas: 100% (7928/7928), done.</span><br><span class="line">From https://github.com/theme-next/hexo-theme-next</span><br><span class="line">* branch            d24c48efb1ff1182b23926a3835e350f9c3ab6eb -&gt; FETCH_HEAD</span><br><span class="line">Added dir &#x27;themes/next&#x27;</span><br></pre></td></tr></table></figure>
+</code></pre>
+<h2 id="Pull-Subtree"><a href="#Pull-Subtree" class="headerlink" title="Pull Subtree"></a>Pull Subtree</h2><pre><code><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git subtree pull --prefix &lt;folder path&gt; &lt;repo url&gt; &lt;ref&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git subtree pull --prefix themes/next https://github.com/theme-next/hexo-theme-next.git master</span></span><br><span class="line">From https://github.com/theme-next/hexo-theme-next</span><br><span class="line">* branch            master     -&gt; FETCH_HEAD</span><br><span class="line">Already up to date.</span><br></pre></td></tr></table></figure>
+</code></pre>
+<h2 id="Push-Subtree"><a href="#Push-Subtree" class="headerlink" title="Push Subtree"></a>Push Subtree</h2><pre><code><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git subtree push --prefix &lt;folder path&gt; &lt;repo url&gt; &lt;ref&gt;</span></span><br></pre></td></tr></table></figure>
+</code></pre>
+<h2 id="Delete-Subtree"><a href="#Delete-Subtree" class="headerlink" title="Delete Subtree"></a>Delete Subtree</h2><p>直接刪除資料夾即可。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://sikkhia93.github.io/blog/Git-subtree/" data-id="cklzaf420000aq9yvd3hwg3ue" data-title="Git subtree" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/git/" rel="tag">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/git-subtree/" rel="tag">git subtree</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Git-submodule-and-subtree" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/Git-submodule-and-subtree/" class="article-date">
+  <time class="dt-published" datetime="2021-03-07T12:28:01.000Z" itemprop="datePublished">2021-03-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/blog/Git-submodule-and-subtree/">Git submodule and subtree</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="Submodule-vs-Subtree"><a href="#Submodule-vs-Subtree" class="headerlink" title="Submodule vs Subtree"></a>Submodule vs Subtree</h2><p><code>Submodule</code> 與 <code>Subtree</code> 兩個都是可以將 <code>SubRepo</code> 加入 <code>SuperRepo</code> 的解決方案，但解決方法與使用上都是不同的。</p>
+<ul>
+<li><code>Submodule</code> 像是指標的形式，將 SubRepo 的 hash 記錄在 SuperRepo。</li>
+<li><code>Subtree</code> 以副本形式，將 SubRepo 複製一份到 SuperRepo。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="left">Submodule</th>
+<th align="left">Subtree</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Cost</td>
+<td align="left">僅有 .gitmodule</td>
+<td align="left">同 SubRepo 大小與空間</td>
+</tr>
+<tr>
+<td align="center">Clone SuperRepo</td>
+<td align="left">需多步驟</td>
+<td align="left">原指令</td>
+</tr>
+<tr>
+<td align="center">Push to SubRepo</td>
+<td align="left">簡單，視為獨立的 repo 可以直接 Push</td>
+<td align="left">麻煩，需要比對 commit 版本</td>
+</tr>
+<tr>
+<td align="center">Pull to SubRepo</td>
+<td align="left">麻煩，須另外執行指令</td>
+<td align="left">簡單，直接 Pull SuperRepo 即可</td>
+</tr>
+<tr>
+<td align="center">簡單說明</td>
+<td align="left">一個 Repo 中另一個 Repo</td>
+<td align="left">與原 Repo 結合，視為子目錄即可</td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://sikkhia93.github.io/blog/Git-submodule-and-subtree/" data-id="cklzaf41x0007q9yvbri88dw6" data-title="Git submodule and subtree" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/git/" rel="tag">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/git-submodule/" rel="tag">git submodule</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/git-subtree/" rel="tag">git subtree</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Version-Control-via-Git" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/Version-Control-via-Git/" class="article-date">
+  <time class="dt-published" datetime="2021-03-07T06:52:34.000Z" itemprop="datePublished">2021-03-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/blog/Version-Control-via-Git/">Version Control via Git</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="Why"><a href="#Why" class="headerlink" title="Why"></a>Why</h2><ul>
+<li>易於追蹤檔案變更</li>
+<li>易於團隊協力開發</li>
+</ul>
+<h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><ol>
+<li><p>安裝 git</p>
+</li>
+<li><p>檢查 git 是否安裝成功</p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git --version</span></span><br><span class="line">git version 2.17.2 (Apple Git-113)</span><br></pre></td></tr></table></figure></li>
+<li><p>初始化 Git repository</p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git init</span></span><br><span class="line">Initialized empty Git repository in /Users/sikkhia/Code/blog/.git/</span><br></pre></td></tr></table></figure></li>
+<li><p>確認 working tree 狀態</p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git status</span></span><br><span class="line">On branch master</span><br><span class="line"></span><br><span class="line">No commits yet</span><br><span class="line"></span><br><span class="line">Untracked files:</span><br><span class="line">(use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span><br><span class="line"></span><br><span class="line">    .gitignore</span><br><span class="line">    _config.landscape.yml</span><br><span class="line">    _config.yml</span><br><span class="line">    package-lock.json</span><br><span class="line">    package.json</span><br><span class="line">    scaffolds/</span><br><span class="line">    source/</span><br><span class="line">    themes/</span><br></pre></td></tr></table></figure></li>
+<li><p>將所有檔案加入 index</p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add --a</span><br></pre></td></tr></table></figure></li>
+<li><p>記錄 repository 的變更</p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git commit -m <span class="string">&quot;1st commit&quot;</span></span></span><br><span class="line">[master (root-commit) 34190f7] 1st commit</span><br><span class="line">10 files changed, 1650 insertions(+)</span><br><span class="line">create mode 100644 .gitignore</span><br><span class="line">create mode 100644 _config.landscape.yml</span><br><span class="line">create mode 100644 _config.yml</span><br><span class="line">create mode 100644 package-lock.json</span><br><span class="line">create mode 100644 package.json</span><br><span class="line">create mode 100644 scaffolds/draft.md</span><br><span class="line">create mode 100644 scaffolds/page.md</span><br><span class="line">create mode 100644 scaffolds/post.md</span><br><span class="line">create mode 100644 source/_posts/hello-world.md</span><br><span class="line">create mode 100644 themes/.gitkeep</span><br></pre></td></tr></table></figure></li>
+<li><p>顯示變更記錄</p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">log</span></span></span><br><span class="line">commit 34190f7f5ce5fc2fc3ce27597afadfbed57ee335 (HEAD -&gt; master)</span><br><span class="line">Author: SikKhia &lt;SikKhia@gmail.com&gt;</span><br><span class="line">Date:   Sun Mar 7 21:03:03 2021 +0800</span><br><span class="line"></span><br><span class="line">    1st commit</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h2><ol>
+<li><p>登入 Github 及 創建新的 Repository</p>
+</li>
+<li><p>將 repository 加入 remote</p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git remote add &lt;name&gt; &lt;repo url&gt;</span><br><span class="line">git remote add origin https://github.com/SikKhia93/hexo.git</span><br></pre></td></tr></table></figure></li>
+<li><p>將 local 的記錄更新至 remote repository</p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git push origin master</span></span><br><span class="line">Counting objects: 15, done.</span><br><span class="line">Delta compression using up to 4 threads.</span><br><span class="line">Compressing objects: 100% (9/9), done.</span><br><span class="line">Writing objects: 100% (15/15), 19.53 KiB | 3.25 MiB/s, done.</span><br><span class="line">Total 15 (delta 0), reused 0 (delta 0)</span><br><span class="line">To https://github.com/SikKhia93/hexo.git</span><br><span class="line">* [new branch]      master -&gt; master</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://sikkhia93.github.io/blog/Version-Control-via-Git/" data-id="cklzaf421000cq9yvg5zy5uvp" data-title="Version Control via Git" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/git/" rel="tag">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/github/" rel="tag">github</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/version-control/" rel="tag">version control</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">標籤</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/git-submodule/" rel="tag">git submodule</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/git-subtree/" rel="tag">git subtree</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/github/" rel="tag">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/version-control/" rel="tag">version control</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">標籤雲</h3>
+    <div class="widget tagcloud">
+      <a href="/blog/tags/git/" style="font-size: 20px;">git</a> <a href="/blog/tags/git-submodule/" style="font-size: 15px;">git submodule</a> <a href="/blog/tags/git-subtree/" style="font-size: 15px;">git subtree</a> <a href="/blog/tags/github/" style="font-size: 10px;">github</a> <a href="/blog/tags/version-control/" style="font-size: 10px;">version control</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">彙整</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/03/">三月 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/Git-submodule/">Git submodule</a>
+          </li>
+        
+          <li>
+            <a href="/blog/Git-subtree/">Git subtree</a>
+          </li>
+        
+          <li>
+            <a href="/blog/Git-submodule-and-subtree/">Git submodule and subtree</a>
+          </li>
+        
+          <li>
+            <a href="/blog/Version-Control-via-Git/">Version Control via Git</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 Jacky Cheng<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/blog/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/blog/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
